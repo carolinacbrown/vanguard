@@ -1,7 +1,10 @@
-/* CSS BY YOUR NAME */
+/* CSS BY Carolina Brown */
 
 /* IMPORTED FONTS*/
-/* IMPORT "INTER" FROM GOOGLE FONTS"
+/* IMPORT "INTER" FROM GOOGLE FONTS" */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 
 /* CSS RESET */
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -35,18 +38,30 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
     line-height: 1;
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--font);
 }
+h2{
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
 ol, ul {
     list-style: none;
 }
+
 blockquote, q {
     quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
     content: '';
     content: none;
 }
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -67,14 +82,42 @@ table {
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
 
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
+span {
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    color: var(--blue);
+}
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
+nav {
+    background: var(--black);
+    padding: 1.2rem 0;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: var(--white);
+    margin-left: 2rem;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: var(--blue);
+}
+
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
- {
+ #hero {
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
     height: 80vh;
     display: grid;
@@ -84,16 +127,125 @@ table {
     overflow: hidden;
 }
 
-/* ADD FLOATING SVG LOGO BEFORE THE H1 */
- {
-    content: "";
+#hero h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    position: relative;
+}
 
-    left:-.5rem;
+#hero p {
+    max-width: 650px;
+    margin: 0 auto 1.5rem auto;
+    color: var(--white);
+}
+
+#hero button {
+    background: var(--blue);
+    color: var(--white);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#hero button:hover {
+    background: #0067d6;
+}
+
+/* ADD FLOATING SVG LOGO BEFORE THE H1 */
+#hero h1::before {
+    content: "";
+    position: absolute;
+    top: -4.2rem;
+    left: 50%;
+    transform: translateX(-50%);
     width: 3.75rem;
     height: 3.75rem;
     background: url('images/vanguard-logo.svg') no-repeat center/contain;
 
 }
+/* WHAT WE OFFER SECTION */
+#offer {
+    padding: 3rem 0;
+    background: var(--white);
+    color: var(--black);
+}
+
+#offer h2 {
+    text-align: left;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+#offer p {
+    margin-bottom: 1rem;
+}
+
+.offer-grid {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.offer-card {
+    background: var(--blue);
+    padding: 2rem;
+    border-radius: 8px;
+    color: var(--white);
+}
+
+.offer-card h3 {
+    font-weight: 700;
+    margin-bottom: .5rem;
+}
+
+#results {
+    background: var(--blue);
+    padding: 3rem 0;
+    text-align: center;
+    color: var(--white);
+}
+#results h2 {
+    font-size: 2rem;
+    text-align: left;
+    margin-bottom: 1rem;
+}   
+
+#results p {
+    margin-bottom: .5rem;
+    text-align: left;
+}
+.results-table h2, .bar-chart h2 {
+    text-align: left;
+    padding: auto;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.results-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* TABLE */
+.results-table {
+    width: 100%;
+}
+.results-table table {
+    width: 100%;
+    background: var(--black);
+    color: var(--white);
+}
+
+.results-table th, .results-table td {
+    padding: .8rem;
+    border-bottom: 1px solid var(--charcoal);
+}
+
 /* THIS ONE IS DONE FOR YOU */
 #bar-chart {
     display: grid;
@@ -113,9 +265,17 @@ table {
     background: var(--charcoal);
     border-radius: 10px;
     position: relative;
-    transition: ;
+    transition: height .6s ease;
     height: 0;
 }
+
+.bar-chart {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* THIS ONE IS DONE FOR YOU */
 .bar::after {
     content: attr(data-year);
@@ -140,22 +300,93 @@ table {
     animation: stepUp 1s ease-in-out forwards;
 }
 
+/* CONTACT SECTION AND FORM HERE */
+
+#contact {
+    padding: 3rem 0;
+    background: var(--black);
+}
+
+#contact h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+#contact p {
+    margin-bottom: 1rem;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+form input, form textarea {
+    background: #111;
+    padding: 1rem;
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+}
+
+form textarea {
+    height: 120px;
+    resize: none;
+}
+
+form button {
+    background: var(--blue);
+    color: var(--white);
+    border: none;
+    padding: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background:#0067d6;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--white);
+    background: var(--black);
+}
+
 
 /* MEDIA QUERIES (MEDIUM) */ 
+
+  @media (min-width: 768px) {
+
+    .offer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
     #results {
         grid-template-columns: 1fr 1fr;
     }
+
     .results-container {
         flex-direction: row;
         justify-content: space-between;
     }
+
     .results-table {
         width: 50%;
     }
+
     .bar-chart {
         width: 50%;
     }
-
+}
 
 /* MEDIA QUERIES (LARGE) */
+    @media (min-width: 1024px) {
+
+    .offer-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
